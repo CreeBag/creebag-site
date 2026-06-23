@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
-
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@300;400;500&display=swap"
+    rel="stylesheet">
   <title>Crèè bag - Crochet Bags</title>
 
   <style>
@@ -24,14 +24,15 @@
     }
 
     header h1 {
-      margin: 0;
-      font-size: 40px;
-      letter-spacing: 2px;
-      font-family: 'Playfair Display', serif;
+      font-family: 'Optima', serif;
+      font-size: 64px;
+      font-weight: 400;
+      letter-spacing: 3px;
+      color: #2f2f2f;
     }
 
     header p,
-    .hero p {
+    .bags p {
       font-family: 'Montserrat', sans-serif;
       font-weight: 300;
       color: #666;
@@ -51,35 +52,69 @@
       font-weight: bold;
     }
 
-    .hero {
+    .bags {
       padding: 60px 20px;
       text-align: center;
       background: #fff;
     }
 
-    .hero p {
+    .bags h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .bags p {
       max-width: 600px;
       margin: 0 auto;
       color: #666;
     }
 
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 38px;
-      font-weight: 400;
+    .card {
+      background: #fff;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
       text-align: center;
-      margin-bottom: 8px;
-      color: #333;
     }
 
-    .section-title::after {
-      content: "";
-      display: block;
-      width: 70px;
-      height: 1px;
-      background: #d8b4f8;
-      margin: 6px auto 0;
-      opacity: 0.8;
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      height: 350px;
+      object-fit: cover;
+      background: #eee;
+    }
+
+    .card h3 {
+      margin: 10px 0 5px;
+    }
+
+    .about,
+    .contact {
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+    }
+
+    footer {
+      background: #f3f3f3;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    button {
+      padding: 10px 15px;
+      border: none;
+      background: #b48cff;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #9b6cff;
     }
 
     .products {
@@ -87,26 +122,13 @@
       justify-content: center;
       gap: 20px;
       flex-wrap: wrap;
-      padding: 40px 20px;
     }
 
     .card {
       width: 300px;
       text-align: center;
-      background: #fff;
-      padding: 15px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     }
 
-    .card img {
-      width: 100%;
-      height: 350px;
-      object-fit: cover;
-      border-radius: 12px;
-    }
-
-    /* SLIDER */
     .slider {
       position: relative;
     }
@@ -142,126 +164,118 @@
       right: 10px;
     }
 
-    .about,
-    .contact {
-      padding: 60px 20px;
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 38px;
+      font-weight: 400;
       text-align: center;
-      max-width: 800px;
-      margin: auto;
+      margin-bottom: 8px;
+      color: #333;
     }
 
-    button {
-      padding: 10px 15px;
-      border: none;
-      background: #b48cff;
-      color: white;
-      border-radius: 8px;
-      cursor: pointer;
-      margin: 5px;
-    }
-
-    button:hover {
-      background: #9b6cff;
-    }
-
-    footer {
-      background: #f3f3f3;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 70px;
+      height: 1px;
+      background: #d8b4f8;
+      margin: 6px auto 0;
+      opacity: 0.8;
     }
   </style>
 </head>
+
+<script>
+  function changeSlide(button, direction) {
+    const slider = button.parentElement;
+    const images = slider.querySelectorAll("img");
+
+    let currentIndex = 0;
+    images.forEach((img, index) => {
+      if (img.classList.contains("active")) {
+        currentIndex = index;
+        img.classList.remove("active");
+      }
+    });
+
+    let newIndex = currentIndex + direction;
+
+    if (newIndex < 0) newIndex = images.length - 1;
+    if (newIndex >= images.length) newIndex = 0;
+
+    images[newIndex].classList.add("active");
+  }
+</script>
 
 <body>
 
   <header>
     <h1>Crèè bag</h1>
-    <p>Borse fatte a mano in crochet, uniche e sostenibili</p>
+    <p>Borse fatte a mano in crochet, uniche e sostenibili 🌸</p>
   </header>
 
   <nav>
     <a href="#prodotti">Prodotti</a>
-    <a href="#about">Chi siamo</a>
     <a href="#contatti">Contatti</a>
+    <a href="#about">Chi siamo</a>
   </nav>
 
-  <section class="hero">
+  <section class="bags">
     <h2>Handmade crochet bags</h2>
-    <p>Ogni borsa è realizzata a mano con cura e attenzione ai dettagli.</p>
+    <p>
+      Ogni borsa è realizzata a mano con cura e attenzione ai dettagli.
+      Pezzi unici pensati per chi ama lo stile artigianale.
+    </p>
   </section>
 
-  <h2 class="section-title" id="prodotti">Le nostre creazioni</h2>
+  <section id="prodotti" class="products">
+    <h2 class="section-title">Le nostre creazioni</h2>
 
-  <section class="products">
-
-    <!-- MARINE -->
-    <div class="card">
-      <img src="images/marine.png" alt="Marine">
-      <h3>Pochette Marine 🌊🐚</h3>
-    </div>
-
-    <!-- ALTEA SLIDER -->
-    <div class="card">
-      <div class="slider">
-        <img class="active" src="images/altea.png" alt="Altea 1">
-        <img src="images/altea1.png" alt="Altea 2">
-
-        <button onclick="changeSlide(this, -1)">‹</button>
-        <button onclick="changeSlide(this, 1)">›</button>
+    <div class="products">
+      <div class="card"> <img src="images/marine.png" alt="Borsa 1">
+        <h3>Pochette Marine 🌊🐚</h3>
       </div>
-      <h3>Modello Altea 🥑💚</h3>
+
+      <div class="card">
+        <div class="slider">
+          <img class="active" src="images/altea.png" alt="Altea 1">
+          <img src="images/altea1.png" alt="Altea 2">
+
+          <button onclick="changeSlide(this, -1)">‹</button>
+          <button onclick="changeSlide(this, 1)">›</button>
+        </div>
+        <h3>Modello Altea 🥑💚</h3>
+      </div>
+
+      <div class="card"> <img src="images/berry.png" alt="Borsa 1">
+        <h3>Modello Berry 🫐</h3>
+      </div>
     </div>
-
-    <!-- BERRY -->
-    <div class="card">
-      <img src="images/berry.png" alt="Berry">
-      <h3>Modello Berry 🫐</h3>
-    </div>
-
-  </section>
-
-  <section id="about" class="about">
-    <h2>Chi siamo</h2>
-    <p>Crèè bag nasce dal desiderio di creare borse uniche e handmade.</p>
-    <a href="https://www.instagram.com/chiarabonii/" target="_blank">Chiara Boni 💌</a>
   </section>
 
   <section id="contatti" class="contact">
-    <h2>Contatti</h2>
-
+    <h2 class ="section-title">Contatti</h2>
+    <p>Per ordini o informazioni scrivici su Instagram o via email.</p>
     <button onclick="window.location.href='mailto:creebag@email.com'">
       📩 Email
     </button>
 
     <a href="https://www.instagram.com/cree_bag/" target="_blank">
-      <button>📸 Instagram</button>
+      <button type="button">📸 Instagram</button>
     </a>
   </section>
 
+  <section id="about" class="about">
+    <h2 class ="section-title">Chi siamo</h2>
+    <p>
+      Crèè bag nasce dal desiderio di dare vita a qualcosa di unico, trasmettendo atutenticità e passione
+    </p>
+    <a href="https://www.instagram.com/chiarabonii/" target="_blank"><button type="button">Chiara Boni 💌</button></a>
+  </section>
+
   <footer>
-    © 2026 Crèè bag
+    © 2026 Crèè bag - Handmade crochet bags
   </footer>
-
-  <script>
-    function changeSlide(button, direction) {
-      const slider = button.parentElement;
-      const images = slider.querySelectorAll("img");
-
-      let current = 0;
-
-      images.forEach((img, i) => {
-        if (img.classList.contains("active")) current = i;
-        img.classList.remove("active");
-      });
-
-      let next = current + direction;
-      if (next < 0) next = images.length - 1;
-      if (next >= images.length) next = 0;
-
-      images[next].classList.add("active");
-    }
-  </script>
 
 </body>
 
