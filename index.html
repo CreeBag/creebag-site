@@ -4,11 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
 <title>Crèè Bag</title>
-  
+
 <style>
 * {
   margin: 0;
@@ -81,15 +80,15 @@ nav {
   margin-bottom: 50px;
 }
 
- .section-title::after {
-      content: "";
-      display: block;
-      width: 70px;
-      height: 1px;
-      background: #d8b4f8;
-      margin: 6px auto 0;
-      opacity: 0.8;
-    }
+.section-title::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 1px;
+  background: #d8b4f8;
+  margin: 6px auto 0;
+  opacity: 0.8;
+}
 
 /* PRODUCTS */
 .products {
@@ -154,7 +153,7 @@ nav {
 .slider button:first-of-type { left: 10px; }
 .slider button:last-of-type { right: 10px; }
 
-/* SEZIONI ABOUT + ORDERS UNIFICATE */
+/* SEZIONI */
 .section-box {
   padding: 100px 20px;
   max-width: 900px;
@@ -170,25 +169,7 @@ nav {
   margin: 25px auto 40px;
 }
 
-.section-box button {
-  font-family: 'Montserrat', sans-serif;
-  padding: 12px 22px;
-  margin: 0px;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: 0.3s;
-}
-
-.section-box button:hover {
-  transform: translateY(-2px);
-}
-
-.section-box a button {
-  color: #2d2d2d;
-  background: #fff;
-}
+/* BOTTONI (ORA CORRETTI) */
 .buttons {
   display: flex;
   justify-content: center;
@@ -197,20 +178,25 @@ nav {
 }
 
 .buttons a.btn {
-  display: inline-block;
-  font-family: 'Montserrat', sans-serif;
-  padding: 12px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 170px;
+  height: 44px;
+  padding: 0 18px;
   border-radius: 30px;
-  background: white;
+  background: #fff;
   color: #2d2d2d;
   text-decoration: none;
   font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
   transition: 0.3s;
 }
 
 .buttons a.btn:hover {
   transform: translateY(-2px);
 }
+
 /* FOOTER */
 footer {
   text-align: center;
@@ -245,7 +231,6 @@ function changeSlide(button, direction) {
 
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="logo">Crèè bag</div>
   <div class="menu">
@@ -254,7 +239,6 @@ function changeSlide(button, direction) {
   </div>
 </nav>
 
-<!-- HERO -->
 <header class="hero">
   <div>
     <h1>Handmade Crochet Bags</h1>
@@ -262,7 +246,6 @@ function changeSlide(button, direction) {
   </div>
 </header>
 
-<!-- PRODUCTS -->
 <section id="prodotti">
   <h2 class="section-title">Le nostre creazioni</h2>
 
@@ -288,25 +271,9 @@ function changeSlide(button, direction) {
       <h3>Modello Berry</h3>
     </div>
 
-    <div class="card">
-      <img src="images/olivia.jpeg">
-      <h3>Modello Olivia</h3>
-    </div>
-
-    <div class="card">
-      <img src="images/paillettes.jpeg">
-      <h3>Clutch Paillettes</h3>
-    </div>
-
-    <div class="card">
-      <img src="images/gilda.jpeg">
-      <h3>Modello Gilda</h3>
-    </div>
-
   </div>
 </section>
 
-<!-- ORDINI -->
 <section id="orders" class="section-box">
   <h2 class="section-title">Ordini</h2>
 
@@ -318,17 +285,11 @@ function changeSlide(button, direction) {
   </p>
 
   <div class="buttons">
-  <a class="btn" href="https://www.instagram.com/cree_bag/" target="_blank">
-    <button>📸 Instagram</button>
-  </a>
-
-  <a href="https://www.instagram.com/chiarabonii/" target="_blank">
-    <button>Chiara Boni 💌</button>
-  </a>
-</div>
+    <a class="btn" href="https://www.instagram.com/cree_bag/" target="_blank">📸 Instagram</a>
+    <a class="btn" href="https://www.instagram.com/chiarabonii/" target="_blank">Chiara Boni 💌</a>
+  </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   © 2026 Crèè bag - Handmade with love
 </footer>
